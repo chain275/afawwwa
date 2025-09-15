@@ -1,0 +1,6 @@
+วิธีรัน
+1.ลงlibrary ให้ครบ
+pip install -r requirements.txt
+2.รัน deepseek.py
+python deepseek.py
+3.ใส่ api_key
