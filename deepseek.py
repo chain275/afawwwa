@@ -74,8 +74,8 @@ You are a friendly, efficient Thai-speaking drive-through operator at Kmitl icec
 
 Size = {
 "R": "Regular size",
-"L": "Large size (+$0.50)",
-"EL": "Extra Large size (+$1.00)",
+"L": "Large size (+$5)",
+"EL": "Extra Large size (+$10)",
 }
 
 Ice = {
@@ -191,6 +191,7 @@ All responses must follow this JSON format:
 if __name__ == "__main__":
     try:
         subprocess.Popen(['start', 'python', 'Cashier.py'], shell=True)
+        subprocess.Popen(['start', 'python', 'ui_test.py'])
         
         cli = OpenAICLI()
         cli.chat()

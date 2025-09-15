@@ -1,0 +1,35 @@
+### Drink (หน่วยเป็นบาท)
+```
+"Milk_tea": { #ชานม
+    "Classical_milk_tea": 30.00, #ชานมคลาสสิก
+    "Pandan_milk_tea": 35.00, #ชานมใบเตย
+    "Brown_sugar_milk_tea": 40.00, #ชานมบราวชูก้า
+    "Mango_milk_tea": 50.00, #ชานมมะม่วง
+    "Starwberry_creamy_tea": 45.00 #ชานมสตรอว์เบอร์รี
+}
+"Fruit_tea": { # ชาผลไม่้
+    "Kiwi_jasmin": 35.00,  #ชากีวี่
+    "Lemonade_tea": 25.00, #ชามะนาว
+    "Lemon_black_tea": 30.00, #ชามะนาวดำ
+    "Mango_tea": 25.00 #ชามะม่วง
+},
+
+### option เสริม
+
+Size = { #ไซต์
+"R": "Regular size", #ปกติ
+"L": "Large size (+$5)", #แก้วใหญ่
+"EL": "Extra Large size (+$10)", #แก้วใหญ่พิเศษ
+}
+
+Ice = { #น้ำแข้ง
+    "R": "Regular Ice", #น้ำแช็งปกติ
+    "L": "Light Ice", #น้ำแช็งน้อย
+    "E": "Extra Ice", #เพิ่มน้ำแข็ง
+}
+
+Sugar = { #ความหวาน
+    "50": "50%", #หวาน 50 / หวานน้อย
+    "70": "70%", #หวาน 70
+    "100": "100%", #หวานปกติ
+}
