@@ -763,7 +763,12 @@ class FastFoodPOS:
                     # Create a file to indicate there's an active order
                     with open(os.path.join("Server", "active_ai_order.txt"), 'w') as f:
                         f.write("1")
-                        
+
+                elif command.startswith("+clear"):
+                    self.current_order = []
+                    print("\nOrder cleared successfully!")
+                    self.update_order_summary()
+
                 elif command.startswith("+Remove") or command.startswith("+remove"):
                     # Extract the item number (assuming format is "+Remove 1")
                     parts = command.split()

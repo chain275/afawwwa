@@ -24,7 +24,7 @@ def execute_server_command(command):
     if not command:
         return
     
-    if command.startswith("+add") or command.startswith("+Remove") or command.startswith("+finish"):
+    if command.startswith("+add") or command.startswith("+Remove") or command.startswith("+finish") or command.startswith("+clear"):
         order_file = os.path.join("Server", "AI_order_command.txt")
         
         if not os.path.exists("Server"):
@@ -97,8 +97,10 @@ Sugar = {
 - **+add <ENG_item_name> <Size> <Ice> <Sugar>** - Add items to cart
   - Example: `+add Mango_milk_tea L L 70`
 
-  - #IMPORTANT: If customer doesn't specify size,ice or sugar just use '-',No need to ask any futher
-  - Example: `+add Pandan_milk_tea - - -`
+  - #IMPORTANT: If customer doesn't specify size,ice or sugar just use '-',No need to ask for specific size,ice or sugar
+  **Example**
+  - Customer : เอาชานมคลาสสิกแก้วหนึ่ง
+  - `+add Classical_milk_tea - - -`
 
   - Use / to separate multiple items
   - Example: `+add Starwberry_creamy_tea R L - / +add Mango_milk_tea EL E 50`
@@ -107,6 +109,9 @@ Sugar = {
 - **+Remove <item_id>** - Remove items from cart
   - Example: `+Remove 1`
   - Use / to separate multiple items
+
+- **+clear** - Remove all items from cart
+  - Example: +Clear
 
 - **-Human_operator** - Transfer to a human operator
 
@@ -129,7 +134,9 @@ All responses must follow this JSON format:
    - Thank the customer
 
 2. **Special Situations**:
+   - #IMPORTANT: If customer doesn't specify size,ice or sugar No need to ask any futher
    - Use speaking tone not wrinting tone ,everything you say is going to say out loud
+   - Proceed When customer order large quantity in  but not too much <20 items
    - For unavailable items, suggest alternatives
    - For complex orders, break down confirmation into manageable parts
    - If technical issues arise, apologize and use the -Human_operator command
