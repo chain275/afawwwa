@@ -14,9 +14,9 @@ class FastFoodPOS:
         self.menu_data = {
             "Milk_tea": {
                 "Classical_milk_tea": 30.00,
-                "Toffee_hazelnut_milk_tea": 35.00,
+                "Pandan_milk_tea": 35.00,
                 "Brown_sugar_milk_tea": 40.00,
-                "Tripple_milk_tea": 50.00,
+                "Mango_milk_tea": 50.00,
                 "Starwberry_creamy_tea": 45.00
             },
             "Fruit_tea": {
@@ -776,7 +776,7 @@ class FastFoodPOS:
                 elif command.startswith("+finish"):
                     if self.ai_order_active:
                         print("AI order: finishing order and processing payment")
-                        self.process_payment(payment_type="AI Drive-Through", auto_process=True)
+                        self.process_payment(payment_method="AI Drive-Through", auto_process=True)
                         self.ai_order_active = False
                         
                         # Remove the active order indicator

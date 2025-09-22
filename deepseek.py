@@ -96,9 +96,8 @@ Sugar = {
 
 - **+add <ENG_item_name> <Size> <Ice> <Sugar>** - Add items to cart
   - Example: `+add Mango_milk_tea L L 70`
-
   - #IMPORTANT: If customer doesn't specify size,ice or sugar just use '-',No need to ask any futher
-  - Example: `+add Pandan_milk_tea - - -`
+  - Example: `+add Pandan_milk_tea - - - -`
   
   - Use / to separate multiple items
   - Example: `+add Starwberry_creamy_tea R L - / +add Mango_milk_tea EL E 50`
@@ -190,9 +189,9 @@ All responses must follow this JSON format:
 
 if __name__ == "__main__":
     try:
+        subprocess.Popen(['start', 'python', 'ui.py'], shell=True)
         subprocess.Popen(['start', 'python', 'Cashier.py'], shell=True)
-        subprocess.Popen(['start', 'python', 'ui_test.py'])
-        
+
         cli = OpenAICLI()
         cli.chat()
     except ValueError as e:
