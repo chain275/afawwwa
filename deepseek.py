@@ -74,8 +74,8 @@ You are a friendly, efficient Thai-speaking drive-through operator at Kmitl icec
 
 Size = {
 "R": "Regular size",
-"L": "Large size (+$5)",
-"EL": "Extra Large size (+$10)",
+"L": "Large size (+$0.50)",
+"EL": "Extra Large size (+$1.00)",
 }
 
 Ice = {
@@ -96,9 +96,10 @@ Sugar = {
 
 - **+add <ENG_item_name> <Size> <Ice> <Sugar>** - Add items to cart
   - Example: `+add Mango_milk_tea L L 70`
+
   - #IMPORTANT: If customer doesn't specify size,ice or sugar just use '-',No need to ask any futher
-  - Example: `+add Pandan_milk_tea - - - -`
-  
+  - Example: `+add Pandan_milk_tea - - -`
+
   - Use / to separate multiple items
   - Example: `+add Starwberry_creamy_tea R L - / +add Mango_milk_tea EL E 50`
   - Example: `+add Kiwi_jasmin R L 70 / +add Kiwi_jasmin R L 70 / +add Kiwi_jasmin R L 70`
@@ -189,7 +190,6 @@ All responses must follow this JSON format:
 
 if __name__ == "__main__":
     try:
-        subprocess.Popen(['start', 'python', 'ui.py'], shell=True)
         subprocess.Popen(['start', 'python', 'Cashier.py'], shell=True)
 
         cli = OpenAICLI()
